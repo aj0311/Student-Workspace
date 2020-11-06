@@ -1,0 +1,21 @@
+#page{
+    padding-left: 5% ;
+    padding-right: 5% ;
+    color: 023e8a;
+}
+
+#signup{
+    padding-left: 5% ;
+    padding-right: 5% ;
+    padding-top: 5%;
+    color:1d3557;
+}
+
+.jumbotron{
+    padding-left: 5% ;
+    padding-right: 5% ;
+    margin-top: 5%;
+    padding-top: 10%;
+    background-color: rgb(7, 7, 70);
+    color: white;
+}
