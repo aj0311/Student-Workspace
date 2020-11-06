@@ -1,15 +1,28 @@
+
+import React from 'react';
+import "bootstrap/dist/css/bootstrap.min.css";
+//import { BrowserRouter as Router, Route} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+
+import Navbar from "./components/navbar.component"
+import Login from "./components/Auth/Login";
+import Signup from "./components/Auth/Signup";
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Home from "./components/Home";
-import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
     <Router>
+
+      <div className="container">
+      <Navbar />
+      <br/>
+      <Route path="/login"  component={Login} />
+      <Route path="/signup" component={Signup} />
+      </div>
       <Navbar />
       <br />
       <div className="container">
@@ -21,10 +34,5 @@ function App() {
     </Router>
   );
 }
-
-/*
-<Route path="/add" exact component={Addtask} />
-        <Route path="/edit/:id" exact component={EditTask} />
-*/
 
 export default App;
