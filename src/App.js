@@ -17,6 +17,7 @@ function App() {
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/dashboard/:id" component={Dashboard} />
       </div>
+      <Footer />
     </Router>
   );
 }

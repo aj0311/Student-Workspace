@@ -4,6 +4,10 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   height: 92%;
+  /*
+    background-color: white;
+  color:blue;
+  */
 }
 html {
   height: 92%;

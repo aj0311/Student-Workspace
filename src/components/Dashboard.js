@@ -35,8 +35,6 @@ class Dashboard extends Component {
             <div className="col-6">hello</div>
           </div>
         </div>
-        <br />
-        <Footer />
       </div>
     );
   }
