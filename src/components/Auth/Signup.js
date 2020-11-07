@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "../navbar.component";
-import Footer from "../Footer.component";
-
-import styles from "./Signup.css";
+import "./Signup.css";
 
 export default class Signup extends Component {
   constructor(props) {
@@ -54,6 +52,8 @@ export default class Signup extends Component {
       emailID: "",
       password: "",
     });
+
+    //window.location = "/dashboard/0";
   }
 
   render() {

@@ -1,3 +1,4 @@
+/*background image and general body colours*/
 body {
   background: url(https://images.unsplash.com/photo-1511649475669-e288648b2339?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80);
   background-position: center;
@@ -12,22 +13,18 @@ body {
 html {
   height: 92%;
 }
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background-color: blue;
+
+/* navbar */
+nav {
+  background-color: #1d3557;
+  color: #f1faee;
 }
-.footer-text {
-  margin-top: 5px;
-  margin-bottom: 10px;
-  text-align: center;
-  color: cornsilk;
-}
+
+/*User card in dashboard*/
 .user-card {
   margin: 10px 10px 10px 10px;
-  background-color: #3a78ab;
-  color: whitesmoke;
+  background-color: #457b9d;
+  color: #f1faee;
   width: fit-content;
   border-radius: 2.5%;
 }
@@ -46,4 +43,46 @@ footer {
 }
 .user-card .user-details em {
   font-size: 17px;
+}
+
+/* task-card */
+.task-card {
+  padding: 4px 4px 4px 4px;
+  margin: 10px 40px 10px 0px;
+  background-color: #457b9d;
+  color: #f1faee;
+  border-radius: 2.5%;
+  text-align: center;
+}
+.btn-circle.btn-xl {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  border-radius: 35px;
+  font-size: 24px;
+  line-height: 1.33;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  padding: 6px 0px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.42857;
+}
+
+/* footer */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #1d3557;
+}
+.footer-text {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: cornsilk;
 }

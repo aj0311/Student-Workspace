@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import Footer from "../Footer.component";
 import Navbar from "../navbar.component";
-
-import styles from "./Login.css";
+import "./Login.css";
 
 export default class Login extends Component {
   constructor(props) {
