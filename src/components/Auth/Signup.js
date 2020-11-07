@@ -130,49 +130,6 @@ export default class Signup extends Component {
                 />
               </div>
             </form>
-
-            <div id="signup" class="col-md-6">
-              <h3>Signup</h3>
-              <form onSubmit={this.onSubmit}>
-                <div className="form-group">
-                  <label>Username: </label>
-                  <input
-                    type="text"
-                    required
-                    className="form-control"
-                    value={this.state.username}
-                    onChange={this.onChangeUsername}
-                  />
-                </div>
-                <div className="form-group">
-                  <label>EmailID: </label>
-                  <input
-                    type="password"
-                    required
-                    className="form-control"
-                    value={this.state.emailID}
-                    onChange={this.onChangeemailID}
-                  />
-                </div>
-                <div className="form-group">
-                  <label>PassWord: </label>
-                  <input
-                    type="password"
-                    required
-                    className="form-control"
-                    value={this.state.password}
-                    onChange={this.onChangePassword}
-                  />
-                </div>
-                <div className="form-group">
-                  <input
-                    type="submit"
-                    value="Signup"
-                    className="btn btn-primary"
-                  />
-                </div>
-              </form>
-            </div>
           </div>
         </div>
       </div>

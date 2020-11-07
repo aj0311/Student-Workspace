@@ -84,7 +84,24 @@ class Dashboard extends Component {
               </div>
             </div>
             <div className="col-7">
-              {this.exerciseList()}
+              <div className="task-card row">
+                <div className="col-6">taskname</div>
+                <div className="col-2">deadline</div>
+                <div className="col-2">edit</div>
+                <div className="col-2">done</div>
+              </div>
+              <div className="task-card row">
+                <div className="col-6">taskname</div>
+                <div className="col-2">deadline</div>
+                <div className="col-2">edit</div>
+                <div className="col-2">done</div>
+              </div>
+              <div className="task-card row">
+                <div className="col-6">taskname</div>
+                <div className="col-2">deadline</div>
+                <div className="col-2">edit</div>
+                <div className="col-2">done</div>
+              </div>
               <button type="button" class="btn btn-warning btn-circle btn-xl">
                 <Link to="/add">
                   <strong>+</strong>
