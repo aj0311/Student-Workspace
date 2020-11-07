@@ -1,4 +1,4 @@
 {
-    "mongoURI":"mongodb+srv://snehal199:snehal199@devconnecter.hzkgn.mongodb.net/<dbname>?retryWrites=true&w=majority",
+    "mongoURI":"mongodb+srv://Tanish:cenatanish@tanish-db.plvyp.mongodb.net/student-workspace?retryWrites=true&w=majority",
     "jwtSecret": "secret"
 }

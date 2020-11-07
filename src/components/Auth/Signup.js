@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-
-import styles from './Signup.css'
-
+import Navbar from "../navbar.component";
+import "./Signup.css";
 
 export default class Signup extends Component {
   constructor(props) {
@@ -13,28 +12,28 @@ export default class Signup extends Component {
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
-      username: '',
-      password: '',
-      emailID: '',
-    }
+      username: "",
+      password: "",
+      emailID: "",
+    };
   }
 
   onChangeUsername(e) {
     this.setState({
-      username: e.target.value
-    })
+      username: e.target.value,
+    });
   }
 
   onChangeemailID(e) {
     this.setState({
-      emailID: e.target.value
-    })
+      emailID: e.target.value,
+    });
   }
 
   onChangePassword(e) {
     this.setState({
-      password: e.target.value
-    })
+      password: e.target.value,
+    });
   }
 
   onSubmit(e) {
@@ -44,19 +43,22 @@ export default class Signup extends Component {
       username: this.state.username,
       emailID: this.state.emailID,
       password: this.state.password,
-    }
+    };
 
     console.log(user);
 
     this.setState({
-      username: '',
-      emailID: '',
-      password: '',
-    })
+      username: "",
+      emailID: "",
+      password: "",
+    });
+
+    //window.location = "/dashboard/0";
   }
 
   render() {
     return (
+
       <div id="page" class="row mb-2">
         <div class="col-md-6">
           <div class="jumbotron ">
@@ -68,8 +70,22 @@ export default class Signup extends Component {
 
             <h1>WORKSPACE</h1>
             <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser’s viewport.</p>
+=======
+      <div>
+        <Navbar />
+        <div id="page" class="row mb-2">
+          <div class="col-md-6">
+            <div class="jumbotron">
+              <h1>Navbar example</h1>
+              <p class="lead">
+                This example is a quick exercise to illustrate how fixed to top
+                navbar works. As you scroll, it will remain fixed to the top of
+                your browser’s viewport.
+              </p>
+            </div>
+
           </div>
-        </div>
+
 
         <div id="signup" class="col-md-6">
           <h3>Signup</h3>
@@ -105,9 +121,52 @@ export default class Signup extends Component {
               <input type="submit" value="Signup" id="bton" className="btn btn-primary" />
             </div>
           </form>
+
+          <div id="signup" class="col-md-6">
+            <h3>Signup</h3>
+            <form onSubmit={this.onSubmit}>
+              <div className="form-group">
+                <label>Username: </label>
+                <input
+                  type="text"
+                  required
+                  className="form-control"
+                  value={this.state.username}
+                  onChange={this.onChangeUsername}
+                />
+              </div>
+              <div className="form-group">
+                <label>EmailID: </label>
+                <input
+                  type="password"
+                  required
+                  className="form-control"
+                  value={this.state.emailID}
+                  onChange={this.onChangeemailID}
+                />
+              </div>
+              <div className="form-group">
+                <label>PassWord: </label>
+                <input
+                  type="password"
+                  required
+                  className="form-control"
+                  value={this.state.password}
+                  onChange={this.onChangePassword}
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="submit"
+                  value="Signup"
+                  className="btn btn-primary"
+                />
+              </div>
+            </form>
+          </div>
+
         </div>
       </div>
-
-    )
+    );
   }
 }
