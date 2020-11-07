@@ -1,0 +1,14 @@
+nav {
+    position: fixed;
+    justify-content: inherit;
+}
+
+#brand {
+    font-style: oblique;
+    font-size: 1.5em;
+}
+
+.l-s {
+    padding-left: 70%;
+}
+

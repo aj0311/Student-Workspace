@@ -3,10 +3,11 @@ const Task = require("../models/task");
 const auth = require("../middleware/auth");
 const config = require('config');
 const router = express.Router();
-const User = require("../models/user");
+
+const User = require('../models/user');
 
 //! create task
-router.post("/", auth, async (req, res) => {
+router.post('/', auth, async (req, res) => {
   const user = await User.findById(req.user.id).select('-password');
   const task = new Task({
     ...req.body,
@@ -25,37 +26,14 @@ router.post("/", auth, async (req, res) => {
 // GET /tasks?limit=10&skip=0   (pagination)
 // GET /tasks?sortBy=createdAt_asc
 // ?sortBy=createdAt:asc&completed=true&limit=1&skip=1
-router.get("/", auth, async (req, res) => {
-  const { user } = req;
-  const match = {};
-  const sort = {};
-  if (req.query.completed) {
-    //* converting a string to a boolean
-    match.completed = req.query.completed === "true";
-  }
-  if (req.query.sortBy) {
-    const parts = req.query.sortBy.split(":");
-    sort[parts[0]] = parts[1] === "desc" ? -1 : 1;
-  }
+router.get('/', auth, async (req, res) => {
+    const user = await User.findById(req.user.id).select('-password');
   try {
-    //* also valid
-    // const tasks = await Task.find({ owner: user._id });
-    // res.send(tasks);
-    // await user.populate("tasks").execPopulate();
-    //*
-    await user
-      .populate({
-        path: "tasks",
-        match,
-        options: {
-          //* pagination
-          limit: parseInt(req.query.limit),
-          skip: parseInt(req.query.skip),
-          sort
-        }
-      })
-      .execPopulate();
-    res.send(user.tasks);
+    const tasks = await Task.find({owner: req.user._id}).sort({ date: -1 });
+    if (!task) {
+        return res.status(404).send("No task found or you're not authenticated");
+      }
+    res.send(tasks);
   } catch (error) {
     res.status(500).send();
   }
@@ -79,7 +57,8 @@ router.get("/:id", auth, async (req, res) => {
 router.patch("/:id", auth, async (req, res) => {
   //*
   const updates = Object.keys(req.body);
-  const allowedUpdates = ["description", "completed"];
+
+  const allowedUpdates = ["taskName","taskDescription","taskStatus"];
   const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
   if (!isValidOperation) {
     return res.status(400).send("ERROR: invalid operation");

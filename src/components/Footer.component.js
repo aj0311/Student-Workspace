@@ -4,9 +4,9 @@ class Footer extends Component {
   state = {};
   render() {
     return (
-      <div>
-        <h1>footer comes here</h1>
-      </div>
+      <footer className="page-footer">
+        <div className="footer-text">Made by Team Ejected_imposters</div>
+      </footer>
     );
   }
 }
