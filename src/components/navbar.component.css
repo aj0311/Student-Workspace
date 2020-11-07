@@ -1,6 +1,6 @@
-nav {
-    position: fixed;
-    justify-content: inherit;
+#nav2{
+    background-color: #14213d;
+    color: white;
 }
 
 #brand {
@@ -12,3 +12,17 @@ nav {
     padding-left: 70%;
 }
 
+#bton:hover {
+    box-shadow: 0 4px #1d4ff2;
+    color: white;
+    background-color: blue;
+  }
+
+  #bton:active {
+    color: white;
+    background-color: blue;
+    box-shadow: none;
+    top: 6px;
+  }
+
+  
