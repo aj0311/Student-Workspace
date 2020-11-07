@@ -5,21 +5,29 @@ import Dashboard from "./components/Dashboard";
 import Login from "./components/Auth/Login";
 import Signup from "./components/Auth/Signup";
 import Navbar from "./components/Navbar";
+import Navbarsecond from "./components/navbar.component";
 import "./components/navbar.component";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import { AuthContext } from "./components/context/AuthContext";
 
 function App() {
   return (
-    <Router>
-      <div>
-        <Route exact path="/" component={Login} />
-        <Route exact path="/signup" component={Signup} />
-        <Route exact path="/dashboard/:id" component={Dashboard} />
-        <Route exact path="/add" component={Dashboard} />
-      </div>
-      <Footer />
-    </Router>
+    <AuthContext>
+      {({ user }) => {
+        return (
+          <Router>
+            {user ? <Navbar /> : <Navbarsecond />}
+            <div>
+              <Route exact path="/" component={Login} />
+              <Route exact path="/signup" component={Signup} />
+              <Route exact path="/dashboard/:id" component={Dashboard} />
+            </div>
+            <Footer />
+          </Router>
+        );
+      }}
+    </AuthContext>
   );
 }
 

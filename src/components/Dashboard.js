@@ -33,16 +33,17 @@ class Dashboard extends Component {
     this.state = { tasks: [] };
   }
 
-  /*componentDidMount() {
+  componentDidMount() {
     axios
-      .get("http://localhost:2000/exercises/")
+      .get("http://localhost:2000/tasks/")
       .then((response) => {
+        console.log(response.data);
         this.setState({ tasks: response.data });
       })
       .catch((error) => {
         console.log("error found " + error);
       });
-  }*/
+  }
 
   deleteTask(id) {
     axios
@@ -84,7 +85,24 @@ class Dashboard extends Component {
               </div>
             </div>
             <div className="col-7">
-              {this.exerciseList()}
+              <div className="task-card row">
+                <div className="col-6">taskname</div>
+                <div className="col-2">deadline</div>
+                <div className="col-2">edit</div>
+                <div className="col-2">done</div>
+              </div>
+              <div className="task-card row">
+                <div className="col-6">taskname</div>
+                <div className="col-2">deadline</div>
+                <div className="col-2">edit</div>
+                <div className="col-2">done</div>
+              </div>
+              <div className="task-card row">
+                <div className="col-6">taskname</div>
+                <div className="col-2">deadline</div>
+                <div className="col-2">edit</div>
+                <div className="col-2">done</div>
+              </div>
               <button type="button" class="btn btn-warning btn-circle btn-xl">
                 <Link to="/add">
                   <strong>+</strong>
