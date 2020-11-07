@@ -33,16 +33,17 @@ class Dashboard extends Component {
     this.state = { tasks: [] };
   }
 
-  /*componentDidMount() {
+  componentDidMount() {
     axios
-      .get("http://localhost:2000/exercises/")
+      .get("http://localhost:2000/tasks/")
       .then((response) => {
+        console.log(response.data);
         this.setState({ tasks: response.data });
       })
       .catch((error) => {
         console.log("error found " + error);
       });
-  }*/
+  }
 
   deleteTask(id) {
     axios
