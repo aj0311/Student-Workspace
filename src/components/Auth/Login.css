@@ -2,21 +2,47 @@
 #page{
     padding-left: 5% ;
     padding-right: 5% ;
-    color: 023e8a;
+    background-color: 023e8a;
 }
 
 #login{
     padding-left: 5% ;
     padding-right: 5% ;
     padding-top: 5%;
-    color:1d3557;
+    color: #14213d;
 }
 
 .jumbotron{
-    padding-left: 5% ;
+    width: 75%;
+    height: 75%;
+    margin-left: 10%;
+    padding-left: 10% ;
     padding-right: 5% ;
     margin-top: 5%;
     padding-top: 7%;
-    background-color: rgb(7, 7, 70);
-    color: white;
+    background-color:  #14213d;
 }
+
+#img1{
+    align-items: center;
+    padding-left: 40%;
+}
+
+h1{
+    font-size: 2.5em;
+    text-align: center;
+    align-items: center;
+}
+
+#bton {
+    color: white;
+    background-color: #14213d;
+  }
+
+
+#bton:hover {
+    color: white;
+    background-color: 000000;
+  }
+
+  
