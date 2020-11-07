@@ -21,6 +21,7 @@ connectDB();
 // Define Routes
 app.use('/user', require('./routes/user'));
 app.use('/auth', require('./routes/auth'));
+app.use('/tasks', require('./routes/task'));
 // app.use('/api/profile', require('./backend/routes/profile'));
 // app.use('/api/posts', require('./backend/routes/posts'));
 //routes use
