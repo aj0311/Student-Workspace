@@ -3,6 +3,7 @@ const Task = require("../models/task");
 const auth = require("../middleware/auth");
 const config = require('config');
 const router = express.Router();
+
 const User = require('../models/user');
 
 //! create task
@@ -56,6 +57,7 @@ router.get("/:id", auth, async (req, res) => {
 router.patch("/:id", auth, async (req, res) => {
   //*
   const updates = Object.keys(req.body);
+
   const allowedUpdates = ["taskName","taskDescription","taskStatus"];
   const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
   if (!isValidOperation) {
